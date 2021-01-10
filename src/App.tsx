@@ -1,36 +1,24 @@
 /**
  * @format
  */
+import "react-native-gesture-handler";
+import React, { useEffect } from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import SplashScreen from "react-native-splash-screen";
+import RootNavigation from "./navigations/RootNavigation";
 
-import React, {useEffect} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import SplashScreen from 'react-native-splash-screen';
-
-declare const global: {HermesInternal: null | {}};
-
-const App = () => {
+function App() {
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hide();
     }, 3000);
   }, []);
-  return <></>;
-};
+  return (
+    <NavigationContainer>
+      <RootNavigation></RootNavigation>
+    </NavigationContainer>
+  );
+}
 
 export default App;
