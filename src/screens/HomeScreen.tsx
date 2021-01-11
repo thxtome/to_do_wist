@@ -2,8 +2,8 @@ import React from "react";
 import { Button } from "react-native";
 import styled from "styled-components/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { AuthTabParamList } from "../navigations/AuthNavigation";
-const StyledLoginView = styled.View`
+import { RootStackParamList } from "../navigations/RootNavigation";
+const StyledHomeView = styled.View`
   background: white;
   flex: 1;
   justify-content: center;
@@ -15,21 +15,21 @@ const StyledText = styled.Text`
 `;
 
 interface Props {
-  navigation: StackNavigationProp<AuthTabParamList, "Signup">;
+  navigation: StackNavigationProp<RootStackParamList, "Home">;
 }
 
-const LoginScreen: React.FC<Props> = ({ navigation }) => {
+const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
-    <StyledLoginView>
-      <StyledText>Signup Screen</StyledText>
+    <StyledHomeView>
+      <StyledText>Home Screen</StyledText>
       <Button
         title="a"
         onPress={() => {
-          navigation.navigate("Login");
+          navigation.navigate("Home");
         }}
       ></Button>
-    </StyledLoginView>
+    </StyledHomeView>
   );
 };
 
-export default LoginScreen;
+export default HomeScreen;

@@ -8,18 +8,22 @@ import {
   Text,
   StatusBar,
 } from "react-native";
-import LoginScreen from "../screens/LoginScreen";
-import SignupScreen from "../screens/SignupScreen";
+import HomeScreen from "../screens/HomeScreen";
+import AuthNavigation from "../navigations/AuthNavigation";
 export type RootStackParamList = {
-  Login: undefined;
-  Signup: undefined;
+  Auth: undefined;
+  Home: undefined;
 };
 const Stack = createStackNavigator<RootStackParamList>();
 const RootNavigation: React.FC = () => {
   return (
-    <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Signup" component={SignupScreen} />
+    <Stack.Navigator initialRouteName="Auth">
+      <Stack.Screen
+        name="Auth"
+        component={AuthNavigation}
+        options={{ headerShown: true, safeAreaInsets: { top: 0 } }}
+      />
+      <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   );
 };
