@@ -15,7 +15,7 @@ const StyledTextInputBox = styled(View)`
   border-bottom-width: 1px;
   border-bottom-color: #999999;
   padding-left: 10px;
-  margin-bottom: 30px;
+  margin-top: 30px;
 `;
 
 interface Props {
